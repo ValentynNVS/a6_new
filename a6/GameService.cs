@@ -22,6 +22,7 @@ namespace a6
         {
             base.OnStart(args);
 
+
             // Initialize your GameServer class here
             gameServer = new GameServer();
 

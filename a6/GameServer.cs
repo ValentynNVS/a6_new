@@ -25,9 +25,9 @@ namespace TCPIPServer
         public static List<SessionVariables> playerSessions = new List<SessionVariables>(); // List of active sessions
 
         /* Constants */
-        const int kMaxMessageLength = 256;
-        const int port = 49749;
-        const string ipv4Address = "192.168.0.72";
+        const int kMaxMessageLength = 2000;
+        const int port = 13000;
+        const string ipv4Address = "10.0.0.31";
         volatile bool running = true; // Running flag to control server status
 
         /*
@@ -57,19 +57,19 @@ namespace TCPIPServer
                 while (running)
                 {
                     // Wait for a connection
-                    Console.WriteLine("Waiting for a connection...");
+                    //Console.WriteLine("Waiting for a connection...");
                     TcpClient client = server.AcceptTcpClient();
 
                     // Connection occurred; fire off a task to handle it
-                    Console.WriteLine("Connection happened!");
+                    //Console.WriteLine("Connection happened!");
                     Action<object> gameWorker = GuessingGame;
                     Task gameTask = Task.Factory.StartNew(gameWorker, client);
-                    Thread.Sleep(100);
+                    //Thread.Sleep(100);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e + e.Message);
+                //Console.WriteLine("Error: " + e + e.Message);
             }
             finally
             {
@@ -100,7 +100,7 @@ namespace TCPIPServer
                 while (stream.DataAvailable && (i = stream.Read(request, 0, request.Length)) != 0)
                 {
                     message = Encoding.ASCII.GetString(request, 0, i);
-                    Console.WriteLine("Received: " + message);
+                    //Console.WriteLine("Received: " + message);
 
                     Regex startGame = new Regex(@"^CreatePlayerSession$");
                     Regex wordGuess = new Regex(@"^MakeGuess\|\S{1,30}\|\S{36}$");
@@ -127,7 +127,7 @@ namespace TCPIPServer
                     /* Send response back to client */
                     byte[] response = Encoding.ASCII.GetBytes(message);
                     stream.Write(response, 0, response.Length);
-                    Console.WriteLine("Sent: " + message);
+                    //Console.WriteLine("Sent: " + message);
                 }
             }
             catch (Exception e)
@@ -288,14 +288,14 @@ namespace TCPIPServer
         public void shutDownServer(TcpListener server)
         {
             // Perform shutdown when 'shutdown' is typed
-            Console.WriteLine("Type 'shutdown' to stop the server...");
+            //Console.WriteLine("Type 'shutdown' to stop the server...");
             string input = Console.ReadLine();
 
             if (input == "shutdown")
             {
                 running = false; // Set running flag to false to stop the server
                 server.Stop();   // Stop the TCP listener
-                Console.WriteLine("Server stopped.");
+                //Console.WriteLine("Server stopped.");
             }
         }
     }
