@@ -14,14 +14,14 @@ namespace a6
         /// </summary>
         static void Main()
         {
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new GameService()
             };
             ServiceBase.Run(ServicesToRun);
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
         }
     }
 }

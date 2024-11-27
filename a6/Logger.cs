@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace a6_win
+namespace a6
 {
     public static class Logger
     {

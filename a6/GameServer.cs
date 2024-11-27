@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using a6;
 
 namespace TCPIPServer
 {
@@ -287,16 +288,13 @@ namespace TCPIPServer
         // Shut down server gracefully
         public void shutDownServer(TcpListener server)
         {
-            // Perform shutdown when 'shutdown' is typed
-            //Console.WriteLine("Type 'shutdown' to stop the server...");
-            string input = Console.ReadLine();
-
-            if (input == "shutdown")
+            if (server != null)
             {
-                running = false; // Set running flag to false to stop the server
+                running = false; // Stop the server loop
                 server.Stop();   // Stop the TCP listener
-                //Console.WriteLine("Server stopped.");
+                Logger.Log("Server has been stopped."); // Log the shutdown
             }
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using a6_win;
+﻿using a6;
 using System;
 using System.ServiceProcess;
 using System.Threading;
@@ -20,7 +20,7 @@ namespace a6
         // OnStart method to start the server
         protected override void OnStart(string[] args)
         {
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
             base.OnStart(args);
 
 
@@ -41,11 +41,19 @@ namespace a6
             base.OnStop();
 
             // Gracefully stop the game server
-            gameServer.shutDownServer(null); // Pass null or a default server object if necessary
-            serverThread.Join();  // Wait for the server thread to finish
+            if (gameServer != null)
+            {
+                gameServer.shutDownServer(server); // Pass the server instance to shut it down
+            }
+
+            if (serverThread != null)
+            {
+                serverThread.Join();  // Wait for the server thread to finish
+            }
 
             // Log service stop
             Logger.Log("GameServer service stopped.");
         }
+
     }
 }
