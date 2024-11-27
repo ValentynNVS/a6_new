@@ -26,8 +26,8 @@ namespace TCPIPServer
 
         /* Constants */
         const int kMaxMessageLength = 2000;
-        const int port = 13000;
-        const string ipv4Address = "10.0.0.31";
+        const int port = 63416;
+        const string ipv4Address = "10.144.109.1";
         volatile bool running = true; // Running flag to control server status
 
         /*

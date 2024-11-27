@@ -20,6 +20,7 @@ namespace a6
         // OnStart method to start the server
         protected override void OnStart(string[] args)
         {
+            System.Diagnostics.Debugger.Launch();
             base.OnStart(args);
 
 
