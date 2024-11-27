@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a6", "a6\a6.csproj", "{16BAF636-B750-457D-B5E7-364560EFB732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\TestHarness.csproj", "{5EC1075E-8E86-475A-BA28-5151489866A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16BAF636-B750-457D-B5E7-364560EFB732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BAF636-B750-457D-B5E7-364560EFB732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BAF636-B750-457D-B5E7-364560EFB732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BAF636-B750-457D-B5E7-364560EFB732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC1075E-8E86-475A-BA28-5151489866A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC1075E-8E86-475A-BA28-5151489866A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC1075E-8E86-475A-BA28-5151489866A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC1075E-8E86-475A-BA28-5151489866A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E84CE54D-C0A8-4E9D-B00D-D2474252A63F}
+	EndGlobalSection
+EndGlobal
